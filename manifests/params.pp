@@ -2,7 +2,6 @@ class autofs::params {
 
   case $osfamily {
     "Debian": {
-      $concat_gnu = true
       $group      = 'root'
       $master     = '/etc/auto.master'
       $owner      = 'root'
@@ -10,7 +9,6 @@ class autofs::params {
       $service    = 'autofs'
     }
     "Solaris": {
-      $concat_gnu = false
       $group      = 'root'
       $master     = '/etc/auto_master'
       $owner      = 'root'
