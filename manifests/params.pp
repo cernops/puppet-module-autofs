@@ -1,14 +1,14 @@
 class autofs::params {
 
-  case $osfamily {
-    "Debian": {
+  case $::osfamily {
+    'Debian': {
       $group      = 'root'
       $master     = '/etc/auto.master'
       $owner      = 'root'
       $package    = [ 'autofs', 'autofs-ldap' ]
       $service    = 'autofs'
     }
-    "Solaris": {
+    'Solaris': {
       $group      = 'root'
       $master     = '/etc/auto_master'
       $owner      = 'root'
@@ -16,7 +16,7 @@ class autofs::params {
       $service    = 'autofs'
     }
     default: {
-      fail("osfamily not supported: $osfamily")
+      fail("osfamily not supported: $::osfamily")
     }
   }
 
