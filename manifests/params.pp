@@ -15,6 +15,13 @@ class autofs::params {
       $package    = [] # solaris has it built-in, no package required
       $service    = 'autofs'
     }
+    'RedHat': {
+      $group      = 'root'
+      $master     = '/etc/auto.master'
+      $owner      = 'root'
+      $package    = [ 'autofs' ]
+      $service    = 'autofs'
+    }
     default: {
       fail("osfamily not supported: $::osfamily")
     }
